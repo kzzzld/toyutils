@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <fcntl.h>
 #include <unistd.h>
 #include <sys/stat.h>
@@ -10,14 +11,23 @@
 const char *USAGE = "Usage: %s [source] [location]\n";
 
 int main(int argc, char *argv[]) {
-    if ( argc < 3 ) { // if there's no 3 arguments
-        fprintf(stderr, USAGE, argv[0]);
-        return 1;
-    }
-    
-    // get src and dest files
+
+    // get arguments
     const char *srcpath  = argv[1];
     const char *destpath = argv[2];
+    int is_move = 0;
+
+    if (argc == 4 && strcmp(argv[1], "--mv") == 0) { // if there's --mv, make is_move 1
+      is_move = 1;
+      srcpath = argv[2];
+      destpath = argv[3];
+    } else if (argc == 3) {
+      srcpath = argv[1];
+      destpath = argv[2];
+    } else {
+      fprintf(stderr, USAGE, argv[0]);
+      return 1;
+    }
 
     // read file
     int srcfd = open(srcpath, O_RDONLY);
@@ -65,6 +75,14 @@ int main(int argc, char *argv[]) {
 
     close(srcfd);
     close(destfd);
+
+    // if there's move flag, just remove main file
+    if (is_move) {
+        if (unlink(srcpath) < 0) {
+          perror("unlink error");
+          return 1;
+        }
+    }
 
     return 0;
 }
