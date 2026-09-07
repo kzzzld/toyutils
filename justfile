@@ -5,3 +5,4 @@ build:
     mkdir -p out
     gcc -o out/cp src/cp/main.c
     gcc -o out/pwd src/pwd/main.c
+    gcc -o out/echo src/echo/main.c
