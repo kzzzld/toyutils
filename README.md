@@ -17,8 +17,18 @@ To build, you have to be able to execute gcc and just.
 just build
 ```
 
+<hr>
+
 Or, if you are a Nix user (btw), you can just use Nix-Shell.
 
 ```bash
 nix-shell --run "just build"
+```
+
+<hr>
+
+To install dependencies using Homebrew, you can run
+
+```bash
+brew bundle
 ```
