@@ -8,6 +8,7 @@ I'm trying to create some coreutils packages myself using C for fun and learning
 - [pwd](./src/pwd)
 - [echo](./src/echo)
 - [ls](./src/ls)
+- [yes](./src/yes)
 
 ## Build
 
