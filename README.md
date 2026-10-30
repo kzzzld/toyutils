@@ -9,6 +9,7 @@ I'm trying to create some coreutils packages myself using C for fun and learning
 - [echo](./src/echo)
 - [ls](./src/ls)
 - [yes](./src/yes)
+- [cat](./src/cat)
 
 ## Build
 

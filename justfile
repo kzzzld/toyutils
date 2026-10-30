@@ -8,3 +8,4 @@ build:
     gcc -o out/echo src/echo/main.c
     gcc -o out/ls src/ls/main.c
     gcc -o out/yes src/yes/main.c
+    gcc -o out/cat src/cat/main.c
