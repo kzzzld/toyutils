@@ -14,6 +14,7 @@ I'm trying to create some coreutils packages myself using C for fun and learning
 - [yes](./src/yes)
 - [cat](./src/cat)
 - [touch](./src/touch)
+- [mkdir](./src/mkdir)
 
 ## Build
 
