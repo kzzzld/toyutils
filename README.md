@@ -2,6 +2,9 @@
 
 I'm trying to create some coreutils packages myself using C for fun and learning.
 
+> [!NOTE]
+> This is a toy project.
+
 ## Tools
 
 - [cp](./src/cp)
